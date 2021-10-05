@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <span>Conagua API</span>
+    <span class="spacer"></span>
+</mat-toolbar>
+
+<h2 style="text-align: center; padding-top: 20px;">Datos de API</h2>
+
+<mat-progress-bar mode="indeterminate" *ngIf="!data" color="accent"></mat-progress-bar>
+
+<mat-card >
+  <mat-card-header>
+    <mat-form-field appearance="standard">
+      <mat-label>Filtrar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8" mat-sort style="width: 100%; height: 400px; overflow: auto;">
+
+      <ng-container matColumnDef="state">
+        <mat-header-cell  *matHeaderCellDef mat-sort-header>Estado </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nes}} </mat-cell>
+      </ng-container>
+
+       <ng-container matColumnDef="municipality" mat-sort-header>
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Municipio </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element"> {{element.nmun }} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="min">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Min </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tmin}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="max">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Max </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tmax}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="description" mat-sort-header>
+        <mat-header-cell mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+        <mat-cell  *matCellDef="let element"> {{element.desciel}} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="20" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+      
+</mat-card>
+  

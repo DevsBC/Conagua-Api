@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "injectronic-sistemas"
+  },
+  "targets": {
+    "injectronic-sistemas": {
+      "hosting": {
+        "conagua": [
+          "conagua-api"
+        ]
+      }
+    }
+  }
+}
