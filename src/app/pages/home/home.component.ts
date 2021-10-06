@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
         this.columns = 3;
         break;
       default:
-        this.columns = 5;
+        this.columns = 4;
     }
   }
 

@@ -18,18 +18,18 @@
       <mat-grid-list [cols]="columns" rowHeight="300px" style="padding:10px" gutterSize="10px" (window:resize)="onResize()" >
         <ng-container *ngFor="let d of filtered" >
           <mat-grid-tile fxFlexAlign="stretch" class="container"> 
-              <mat-card class="card mat-elevation-z8" cdkDragBoundary=".container" cdkDrag>
+              <mat-card class="card mat-elevation-z8">
                 <mat-card-header>
                   <mat-card-title>{{ d.nes }}</mat-card-title>
                   <mat-card-subtitle>{{ d.nmun }}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
-                  <div class="flex-row">
-                    <div class="temp">
+                  <div fxLayout="row">
+                    <div class="temp" fxFlex="50">
                       <h3><b>{{ d.tmax }} &#8451;</b></h3>
                       <h3>{{ d.tmin }} &#8451;</h3>
                     </div>
-                    <div class="outlook">
+                    <div class="outlook" fxFlex="50">
                       <img src="http://openweathermap.org/img/wn/02d@2x.png" />
                       <span>{{ d.desciel }} </span>
                     </div>
