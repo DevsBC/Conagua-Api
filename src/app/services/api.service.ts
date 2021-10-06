@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
 
-  private baseUrl = 'https://smn.cna.gob.mx';
   private server = environment.server;
 
   constructor(private http: HttpClient) { }

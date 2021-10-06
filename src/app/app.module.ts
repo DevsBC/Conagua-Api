@@ -14,8 +14,13 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar'; 
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatExpansionModule } from '@angular/material/expansion'; 
+import { MatGridListModule } from '@angular/material/grid-list'; 
+import { MatButtonModule } from '@angular/material/button'; 
+import { DragDropModule } from '@angular/cdk/drag-drop'; 
 
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatProgressBarModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatButtonModule,
+    DragDropModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
